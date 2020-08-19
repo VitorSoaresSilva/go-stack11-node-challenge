@@ -15,11 +15,10 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  // TODO Data Validation
   const {title,url,techs} = request.body;
-  const repositorie = {id: uuid(), title, url, techs, likes: 0};
-  repositories.push(repositorie);
-  return response.status(201).json(repositorie);
+  const repo = {id: uuid(), title, url, techs, likes: 0};
+  repositories.push(repo);
+  return response.status(201).json(repo);
 
 });
 
